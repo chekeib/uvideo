@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Ansari, Ph.D. - Technology Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero .summary {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #60a5fa;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .section {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #f1f5f9;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 2px;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1rem;
+            color: #60a5fa;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date-location {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .achievement {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .achievement::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(51, 65, 85, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .awards-list {
+            list-style: none;
+        }
+
+        .awards-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .awards-list li:last-child {
+            border-bottom: none;
+        }
+
+        .award-year {
+            color: #60a5fa;
+            font-weight: 600;
+            float: right;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: rgba(203, 213, 225, 0.8);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="profile-image pulse">AA</div>
+            <h1>Ahmad Ansari, Ph.D.</h1>
+            <p class="subtitle">Technology Leader • Telecommunications Executive</p>
+            <p class="summary">
+                Telecommunications executive with 30+ years leading technology innovation and high-performing engineering teams across broadband access networks, wireless technologies, and video platforms. Trusted strategic advisor driving billion-dollar initiatives and serving millions of subscribers worldwide.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:acansari63@gmail.com" class="btn btn-primary">Contact Me</a>
+                <a href="https://www.linkedin.com/in/ahmad-ansari-ph-d-23a1b67/" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+            </div>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Years of Leadership</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Engineers Managed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$50M+</div>
+                <div class="stat-label">Annual Budget</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">56</div>
+                <div class="stat-label">U.S. Patents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15M+</div>
+                <div class="stat-label">Subscribers Served</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$10B+</div>
+                <div class="stat-label">Revenue Impact</div>
+            </div>
+        </div>
+
+        <!-- Main Sections -->
+        <div class="sections">
+            <!-- Experience -->
+            <div class="section">
+                <h2>Executive Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-title">Vice President, Engineering</div>
+                    <div class="company">Charter Communications</div>
+                    <div class="date-location">Feb 2022 — July 2025 | Denver, CO</div>
+                    <div class="achievement">Led 100+ person engineering organization with $50M+ budget</div>
+                    <div class="achievement">Championed DOCSIS 4.0 adoption and distributed access architecture</div>
+                    <div class="achievement">Launched DOCSIS 3.1 and 10Gbps PON serving 15M+ subscribers</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Sr. Director, Engineering</div>
+                    <div class="company">Charter Communications</div>
+                    <div class="date-location">Mar 2018 – Feb 2022 | Denver, CO</div>
+                    <div class="achievement">Managed 75+ engineers across HFC/DOCSIS and FTTH teams</div>
+                    <div class="achievement">Pioneered 10Gbps PON deployment reaching 1M subscribers</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Director, Architecture & System Engineering</div>
+                    <div class="company">AT&T Entertainment Group</div>
+                    <div class="date-location">Nov 2015 – Mar 2018 | Austin, TX</div>
+                    <div class="achievement">Led 50+ architects developing AT&T TV streaming platform</div>
+                    <div class="achievement">Served on M&A technology committee for 5+ major acquisitions</div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Director, U-verse IPTV Architecture</div>
+                    <div class="company">AT&T Labs</div>
+                    <div class="date-location">Feb 2004 – Nov 2015 | Austin, TX</div>
+                    <div class="achievement">Built U-verse platform serving 6M+ subscribers, $10B+ revenue</div>
+                    <div class="achievement">Designed industry's first IPTV STB and wireless IPTV solution</div>
+                    <div class="achievement">Launched industry's first consumer 1Gbps fiber service</div>
+                </div>
+            </div>
+
+            <!-- Core Expertise -->
+            <div class="section">
+                <h2>Core Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Executive Leadership</h3>
+                        <p>Strategic technology management, M&A advisory, C-level consulting, team building</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Broadband Technologies</h3>
+                        <p>FTTH, HFC DOCSIS, DAA, xDSL, 10Gbps PON, DOCSIS 4.0</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Video Platforms</h3>
+                        <p>IPTV architecture, streaming platforms, STB design, CDN, DRM</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Innovation</h3>
+                        <p>Patent development, industry standards, FCC advisory, technology roadmaps</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recognition -->
+            <div class="section">
+                <h2>Recognition & Awards</h2>
+                <ul class="awards-list">
+                    <li>AT&T Science and Technology Medal Award <span class="award-year">2008</span></li>
+                    <li>56 U.S. Patents in Telecommunications & Video <span class="award-year">Ongoing</span></li>
+                    <li>Charter Communications Certificates of Appreciation <span class="award-year">2019-2020</span></li>
+                    <li>AT&T IP Achievement Silver Award <span class="award-year">2013</span></li>
+                    <li>FCC Technology Advisory Committee Member <span class="award-year">2017</span></li>
+                    <li>French Government Full Scholarships <span class="award-year">1982-1987</span></li>
+                    <li>Valedictorian, Kabul French High School <span class="award-year">1982</span></li>
+                </ul>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2>Education & Credentials</h2>
+                <div class="experience-item">
+                    <div class="job-title">Executive Leadership Program</div>
+                    <div class="company">Tuck School of Business, Dartmouth</div>
+                    <div class="date-location">2022</div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Mini-MBA, Global Technology Management</div>
+                    <div class="company">AT&T School of Business & Gordon Institute, Tufts</div>
+                    <div class="date-location">1995</div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Ph.D. Electrical & Computer Engineering</div>
+                    <div class="company">Université de Paris XII</div>
+                    <div class="date-location">1987-1990 | High Honors</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Ahmad Ansari, Ph.D. • Technology Leader • Available for Executive Opportunities</p>
+        <p>6420 S. Riverwood Ct. Aurora, CO 80016 • 512-913-4750</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add subtle animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
